@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.css">
+
+</head>
+<body>
+
+<section class="container-fluid">
+    <div style="height: 100px;" class="bg-light" >
+        <h1 class="text-success">POS SYSTEM</h1>
+
+    </div>
+</section>
+
+<section class="container-fluid">
+    <div style="height: 82vh; width: 200px; margin:5px; border-radius: 10px"  class="bg-success">
+        <!--        <ul style="list-style: none; left: 50px; top: 120px; position: absolute; margin-bottom: 10px;"  class="fw-bold mb-5 text-light nav nav-pills flex-column mb-auto">-->
+        <!--            <li class="nav-item">Home</li>-->
+        <!--            <li class="nav-item">Customer</li>-->
+        <!--            <li class="nav-item">Item</li>-->
+        <!--            <li class="nav-item">Order</li>-->
+        <!--        </ul>-->
+
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="Home.html" class="nav-link active" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="customer.html" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                    Customer
+                </a>
+            </li>
+            <li>
+                <a href="Items.html" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                    Items
+                </a>
+            </li>
+            <li>
+                <a href="Orders.html" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                    Orders
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    Others
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<section class="container-fluid">
+    <div style="position: absolute; height: 250px; width: 350px; left: 250px; top: 100px; margin-top: 10px;" class="bg-light">
+
+        <div style="width: 350px; height: 40px; position: absolute" class="bg-success">
+            <p class="text-light" style="position: absolute; left: 10px; top: 8px;">Invoice Details</p>
+        </div>
+
+        <label style="left: 20px; position: absolute; top: 50px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 70px; position: absolute; width: 140px; left: 20px; height: 25px">
+
+        <label style="left: 200px; position: absolute; top: 50px; z-index: 100; width: 200px;" class="fw-bold text-black">Date</label>
+        <input type="date" value="2024-05-06" max="2024-07-05" min="2024-05-06" style="left: 200px; top: 70px; position: absolute; height: 25px; width: 130px">
+
+        <label style="left: 20px; position: absolute; top: 95px; z-index: 100; width: 200px;" class="fw-bold text-black">Customer</label>
+        <select class="form-select" id="inputGroupSelect01" style="position: absolute; top: 115px; left: 20px; width: 140px; height: 25px;">
+            <!-- Options for select element would go here -->
+        </select> <!-- Closing tag for select element -->
+
+        <label style="left: 200px; position: absolute; top: 95px; z-index: 100; width: 200px;" class="fw-bold text-black">salary</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 115px; position: absolute; width: 130px; left: 200px; height: 25px;">
+
+        <label style="left: 20px; position: absolute; top: 140px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; left: 20px; height: 25px; width: 300px">
+
+
+        <label style="left: 20px; position: absolute; top: 185px; z-index: 100; width: 200px;" class="fw-bold text-black">Address</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 205px; position: absolute; width: 300px; left: 20px; height: 25px;">
+
+    </div>
+</section>
+
+
+<section>
+    <div style="position: absolute; height: 250px; width: 350px; left: 650px; top: 100px; margin-top: 10px;" class="bg-light">
+
+        <div style="width: 350px; height: 40px; position: absolute" class="bg-success">
+            <P class="text-light" style="position: absolute; left: 10px; top: 8px;">Item Select</P>
+        </div>
+
+        <label style="left: 20px; position: absolute; top: 50px; z-index: 100; width: 200px;" class="fw-bold text-black">Item</label>
+        <select class="form-select" id="inputGroupSelect02" style="position: absolute; top: 70px; left: 20px; width: 140px; height: 25px;">
+            <!-- Options for select element would go here -->
+        </select>
+
+        <label style="left: 200px; position: absolute; top: 50px; z-index: 100; width: 200px;" class="fw-bold text-black">Item Name</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 70px; position: absolute; width: 130px; left: 200px; height: 25px;">
+
+        <label style="left: 20px; position: absolute; top: 95px; z-index: 100; width: 200px;" class="fw-bold text-black">Price</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 115px; position: absolute; width: 130px; left: 20px; height: 25px;">
+
+
+        <label style="left: 200px; position: absolute; top: 95px; z-index: 100; width: 200px;" class="fw-bold text-black">QtyOfHand</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 115px; position: absolute; width: 130px; left: 200px; height: 25px;">
+
+        <label style="left: 20px; position: absolute; top: 140px; z-index: 100; width: 200px;" class="fw-bold text-black">Order Quantity</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; left: 20px; height: 25px; width: 300px">
+
+        <button type="button" class="btn btn-danger" style="left: 220px; top: 200px; position: absolute">Add Item</button>
+    </div>
+
+</section>
+
+<section>
+    <div style="position: absolute; height: 250px; width: 250px; left: 1050px; top: 100px; margin-top: 10px;" class="bg-light">
+
+
+    </div>
+</section>
+
+<section>
+    <div style="width: 1090px; height: 230px; bottom: 10px; position: absolute; left: 250px" class="bg-light" >
+
+        <table class="table">
+            <thead class="table-dark">
+
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td>I001</td>
+                <td>Toffee</td>
+                <td>10</td>
+                <td>30</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+
+<link rel="stylesheet" href="../boostrap/js/bootstrap.js">
+</body>
+</html>
