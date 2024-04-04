@@ -1,0 +1,78 @@
+.bg-light{
+    position: relative;
+}
+
+h1{
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    text-align: center;
+}
+#div1{
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    left: 250px;
+    top: 100px;
+    margin-top: 10px;
+}
+
+#h1c{
+    color: white;
+    text-align: center;
+}
+
+#div1In{
+   background-color: white;
+    left: 130px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    align-content: center;
+}
+
+#div2{
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    left: 600px;
+    top: 100px;
+    margin-top: 10px;
+}
+
+#h2c{
+    color: white;
+    text-align: center;
+}
+
+#div2In{
+    background-color: white;
+    left: 130px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    align-content: center;
+}
+
+#div3{
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    left: 950px;
+    top: 100px;
+    margin-top: 10px;
+}
+
+#h3c{
+    color: white;
+    text-align: center;
+}
+
+#div3In{
+    background-color: white;
+    left: 130px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    align-content: center;
+}
