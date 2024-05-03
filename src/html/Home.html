@@ -380,32 +380,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Uncommented jQuery link -->
     <script src="../boostrap/js/bootstrap.js"></script> <!-- Changed relative path -->
-    <script>
-        $("#customer").hide();
-        $("#item").hide();
-        $("#orders").hide();
+    <script src="../js/script.js"></script>
 
-        $("#customer-btn").on('click', () => {
-            $("#customer").show();
-            $("#home").hide();
-            $("#item").hide();
-            $("#orders").hide();
-        });
-
-        $("#item-btn").on('click', () => {
-            $("#item").show();
-            $("#home").hide();
-            $("#customer").hide();
-            $("#orders").hide();
-        });
-
-        $("#Order-btn").on('click', () => {
-            $("#orders").show();
-            $("#home").hide();
-            $("#customer").hide();
-            $("#item").hide();
-        });
-    </script>
 
 </body>
 </html>
