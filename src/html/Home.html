@@ -160,18 +160,18 @@
             <table class="table" id="cus-table">
                 <thead class="table-dark">
 
-                <th id="tbl-col-id">ID</th>
-                <th id="tbl-col-name">Name</th>
-                <th id="tbl-col-address">Address</th>
-                <th id="tbl-col-salary">Salary</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Salary</th>
 
                 </thead>
-                <tbody>
+                <tbody id="tbl-value">
                 <tr>
-                    <td>C001</td>
-                    <td>Kavindu</td>
-                    <td>Panadura</td>
-                    <td>30000</td>
+                    <td class="tbl-col-id">1</td>
+                    <td class="tbl-col-name">John Doe</td>
+                    <td class="tbl-col-address">123 Main St</td>
+                    <td class="tbl-col-salary">$50000</td>
                 </tr>
                 </tbody>
             </table>
@@ -188,10 +188,10 @@
 
                 <label style="left: 20px; position: absolute" class="fw-bold text-black">Search Items</label>
                 <input type="text" class="form-control" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 400px; left: 20px; height: 30px">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon3" style="top: 25px; position: absolute; left: 420px; height: 30px">Search</button>
+                <button class="btn btn-outline-secondary"  type="button" id="itm-serch-btn" style="top: 25px; position: absolute; left: 420px; height: 30px">Search</button>
 
                 <label style="left: 20px; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 20px; height: 30px">
+                <input type="text" id="" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 20px; height: 30px">
 
                 <label style="left: 350px; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
                 <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 350px; height: 30px">

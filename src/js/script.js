@@ -1,5 +1,7 @@
 import {CustomerModel} from "../js/customerModel.js";
 import {customer} from "../js/db.js";
+var recordIndex;
+
 
 
 $("#customer").hide();
@@ -36,10 +38,8 @@ $(document).ready(function(){
 
         var cusObj = new  CustomerModel(inputValueId, inputValueFname, inputValueAddress, inputValueSalary);
 
-        // Push the customer object into the customer array
         customer.push(cusObj);
 
-        // Generate HTML markup for a new table row
         var newRow = `<tr>
             <td>${inputValueId}</td>
             <td>${inputValueFname}</td>
@@ -49,5 +49,39 @@ $(document).ready(function(){
 
         // Append the new row to the table
         $("#cus-table tbody").append(newRow);
+
+        clearField();
     });
 });
+
+$("#cus-table").on('click', 'tr', function() {
+    $("#tbl-value>tr").click(function (){
+        let id=$(this).children(':eq(0)').text();
+        let name=$(this).children(':eq(1)').text();
+        let address=$(this).children(':eq(2)').text();
+        let salary=$(this).children(':eq(3)').text();
+
+        console.log(id+"  "+name+"  "+address+" "+salary);
+
+        $('#serch-cus-id').val(id);
+        $('#serch-cus-name').val(name);
+        $('#serch-cus-address').val(address);
+        $('#serch-cus-salary').val(salary);
+    });
+});
+
+$("#cus-table").on('dblclick','tr',function() {
+    let alertConfrimDelete = confirm('Do you really want to delete this customer');
+    if (alertConfrimDelete==true) {
+        let index = $(this).index();
+        recordIndex = index;
+        $('.delete_btn').click();
+    }
+});
+
+function clearField(){
+    $("#add-inp-cusId").val('');
+    $("#add-inp-cusName").val('');
+    $("#add-inp-cusAddress").val('');
+    $("#add-inp-cusSalary").val('');
+}
