@@ -1,4 +1,4 @@
-export class CustomerModel{
+export default class CustomerModel{
 
     constructor(id,name,address,salary){
         this.id = id;
@@ -20,7 +20,7 @@ export class CustomerModel{
     }
 
     set salary(value) {
-        this._address = value;
+        this._salary = value;
     }
 
     get id() {
