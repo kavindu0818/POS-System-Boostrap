@@ -21,7 +21,6 @@ var recordIndex;
             <td>${inputValueSalary}</td>
         </tr>`;
 
-        // Append the new row to the table
         $("#cus-table tbody").append(newRow);
 
         clearField();
@@ -52,27 +51,53 @@ $("#cus-table").on('dblclick','tr',function() {
     }
 });
 
-// $("#btn-update-cus").on('click', function () {
-//     var customerID = $('#serch-cus-id').val();
-//     var customerName = $('#serch-cus-name').val();
-//     var customerAddress = $('#serch-cus-address').val();
-//     var customerSalary = $('#serch-cus-salary').val();
-//
-//     // Assuming `recordIndex` is defined correctly
-//     let customerUpdateObj = customer[recordIndex];
-//     customerUpdateObj.id = customerID;
-//     customerUpdateObj.name = customerName;
-//     customerUpdateObj.address = customerAddress;
-//     customerUpdateObj.salary = customerSalary;
-//
-//     // Update the existing row in the table
-//     $("#cus-table tbody tr").eq(recordIndex).html(`
-//         <td>${customerID}</td>
-//         <td>${customerName}</td>
-//         <td>${customerAddress}</td>
-//         <td>${customerSalary}</td>
-//     `);
-// });
+$("#btn-remove-cus").click(function () {
+    let customerID = $('#serch-cus-id').val();
+
+    let response = deleteCustomer(customerID);
+    if (response) {
+        alert("Customer Removed Successfully");
+    } else {
+        alert("Customer not found or Update Failed..!");
+    }
+});
+
+function deleteCustomer(customerID){
+    let indexToDelete = -1;
+    for (let i = 0; i < customer.length; i++) {
+        if (customer[i].id === customerID) {
+            indexToDelete = i;
+            break;
+        }
+    }
+
+    if (indexToDelete !== -1) {
+        // Remove the customer from the array
+        customer.splice(indexToDelete, 1);
+
+        // Update the table
+        updateTable();
+        clearFieldSearch();
+
+        return true; // Deleted successfully
+    } else {
+        return false; // Customer not found or deletion failed
+    }
+}
+
+function updateTable() {
+    $("#cus-table tbody").empty();
+
+    customer.forEach(function(cus) {
+        let row = `<tr>
+            <td>${cus.id}</td>
+            <td>${cus.name}</td>
+            <td>${cus.address}</td>
+            <td>${cus.salary}</td>
+        </tr>`;
+        $('#cus-table tbody').append(row);
+    });
+}
 
 $("#btn-update-cus").click(function () {
     let customerID = $('#serch-cus-id').val();
@@ -100,6 +125,7 @@ function updateCustomer(customerID) {
         cus.address = $("#serch-cus-address").val();
         cus.salary = $("#serch-cus-salary").val();
         addCustomerTable();
+        clearFieldSearch();
         return true;
     } else {
         return false;
@@ -121,17 +147,12 @@ function addCustomerTable() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+function clearFieldSearch(){
+    $("#serch-cus-id").val('');
+    $("#serch-cus-name").val('');
+    $("#serch-cus-address").val('');
+    $("#serch-cus-salary").val('');
+}
 
 function clearField(){
     $("#add-inp-cusId").val('');
