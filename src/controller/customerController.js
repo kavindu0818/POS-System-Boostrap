@@ -51,6 +51,40 @@ $("#cus-table").on('dblclick','tr',function() {
     }
 });
 
+
+$("#serch-btn-cus").click(function () {
+    let customerID = $('#serch-inp-cus').val();
+
+    let indexTo = -1;
+
+    for (let i = 0; i < customer.length; i++) {
+        if (customer[i].id === customerID) {
+            indexTo = i;
+            break;
+        }
+    }
+
+    if (indexTo !== -1) {
+        // Customer found, set values of text fields
+        $('#serch-cus-id').val(customer[indexTo].id);
+        $('#serch-cus-name').val(customer[indexTo].name);
+        $('#serch-cus-address').val(customer[indexTo].address);
+        $('#serch-cus-salary').val(customer[indexTo].salary);
+
+        $('#serch-inp-cus').val('');
+    } else {
+        // Customer not found, clear text fields
+        $('#serch-cus-id').val('');
+        $('#serch-cus-name').val('');
+        $('#serch-cus-address').val('');
+        $('#serch-cus-salary').val('');
+        alert("Customer not found!");
+    }
+
+});
+
+
+
 $("#btn-remove-cus").click(function () {
     let customerID = $('#serch-cus-id').val();
 

@@ -187,23 +187,23 @@
             <div style="position: absolute; height: 250px; width: 650px; left: 250px; top: 100px; margin-top: 10px;" class="bg-light">
 
                 <label style="left: 20px; position: absolute" class="fw-bold text-black">Search Items</label>
-                <input type="text" class="form-control" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 400px; left: 20px; height: 30px">
+                <input type="text" id="serch-inp-item" class="form-control" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 400px; left: 20px; height: 30px">
                 <button class="btn btn-outline-secondary"  type="button" id="itm-serch-btn" style="top: 25px; position: absolute; left: 420px; height: 30px">Search</button>
 
                 <label style="left: 20px; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
-                <input type="text" id="" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 20px; height: 30px">
+                <input type="text" id="s-item-inp-code" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 20px; height: 30px">
 
                 <label style="left: 350px; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 350px; height: 30px">
+                <input type="text" id="s-item-inp-name" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 280px; left: 350px; height: 30px">
 
                 <label style="left: 20px; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Quantity</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 280px; left: 20px; height: 30px">
+                <input type="text" class="form-control" id="s-item-inp-qty" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 280px; left: 20px; height: 30px">
 
                 <label style="left: 350px; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Price</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 280px; left: 350px; height: 30px">
+                <input type="text" class="form-control" id="s-item-inp-price" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 280px; left: 350px; height: 30px">
 
-                <button type="button" class="btn btn-warning" style="top: 200px; left: 450px; position: absolute; height: 30px; color: white;">Update</button>
-                <button type="button" class="btn btn-danger" style="top: 200px; left: 540px; position: absolute; height: 30px">Remove</button>
+                <button type="button" class="btn btn-warning" id="btn-update-item" style="top: 200px; left: 450px; position: absolute; height: 30px; color: white;">Update</button>
+                <button type="button" class="btn btn-danger" id="btn-remove-item" style="top: 200px; left: 540px; position: absolute; height: 30px">Remove</button>
 
 
             </div>
@@ -214,25 +214,25 @@
                 <p CLASS="fw-bold" style="position: absolute; right: 0px">+ ADD ITEMS</p>
 
                 <label style="left: 10px; position: absolute; top: 20px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; width: 280px; left: 10px; height: 30px">
+                <input type="text" class="form-control" id="add-item-code" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; width: 280px; left: 10px; height: 30px">
 
                 <label style="left: 10px; position: absolute; top: 70px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 90px; position: absolute; width: 280px; left: 10px; height: 30px">
+                <input type="text" class="form-control" id="add-item-name" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 90px; position: absolute; width: 280px; left: 10px; height: 30px">
 
                 <label style="left: 10px; position: absolute; top: 120px; z-index: 100; width: 200px;" class="fw-bold text-black">Quantity</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 140px; position: absolute; width: 280px; left: 10px; height: 30px">
+                <input type="text" class="form-control" id="add-item-qty" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 140px; position: absolute; width: 280px; left: 10px; height: 30px">
 
                 <label style="left: 10px; position: absolute; top: 168px; z-index: 100; width: 200px;" class="fw-bold text-black">Price</label>
-                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 188px; position: absolute; width: 280px; left: 10px; height: 30px">
+                <input type="text" class="form-control" id="add-item-price" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 188px; position: absolute; width: 280px; left: 10px; height: 30px">
 
-                <input class="btn btn-primary" type="submit" value="Submit" style="top: 215px; right: 20px; position: absolute; height: 30px">
+                <input class="btn btn-primary" id="btn-add-item" type="submit" value="Submit" style="top: 215px; right: 20px; position: absolute; height: 30px">
             </div>
         </section>
 
         <section>
             <div style="width: 1090px; height: 230px; bottom: 10px; position: absolute; left: 250px" class="bg-light" >
 
-                <table class="table">
+                <table class="table" id="item-table">
                     <thead class="table-dark">
 
                     <th>Code</th>
@@ -241,12 +241,12 @@
                     <th>Price</th>
 
                     </thead>
-                    <tbody>
+                    <tbody id="item-tbl-value">
                     <tr>
-                        <td>I001</td>
-                        <td>Toffee</td>
-                        <td>10</td>
-                        <td>30</td>
+<!--                        <td>I001</td>-->
+<!--                        <td>Toffee</td>-->
+<!--                        <td>10</td>-->
+<!--                        <td>30</td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -377,6 +377,7 @@
     <script src="../boostrap/js/bootstrap.js"></script>
     <script type="module" src="../js/script.js"></script>
     <script type="module" src="../controller/customerController.js"></script>
+    <script type="module" src="../controller/itemController.js"></script>
 <!--    <script src="../js/db.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
