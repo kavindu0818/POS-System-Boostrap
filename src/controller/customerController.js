@@ -3,6 +3,8 @@ import {customer} from "../db/db.js";
 var recordIndex;
 
 
+loadAllCustomerId();
+
     $("#add-btn-cus").on('click',function(){
         console.log("hiiiiiiiiiii")
         var inputValueId = $("#add-inp-cusId").val();
@@ -25,6 +27,19 @@ var recordIndex;
 
         clearField();
     });
+
+  function loadAllCustomerId() {
+    // Clear existing options in the combo box
+    const customerSelect = $('#invoice-input-cus-cmb');
+    customerSelect.empty();
+
+    let id = "0001";
+    let name = "kavindu";
+
+    for (let cus of customer) {
+        $('#invoice-input-cus-cmb').append(`<option>${cus._id}</option>`);
+    }
+}
 
 $("#cus-table").on('click', 'tr', function() {
     $("#tbl-value>tr").click(function (){
