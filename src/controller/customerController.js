@@ -26,18 +26,13 @@ loadAllCustomerId();
         $("#cus-table tbody").append(newRow);
 
         clearField();
+        loadAllCustomerId();
     });
 
-  function loadAllCustomerId() {
-    // Clear existing options in the combo box
-    const customerSelect = $('#invoice-input-cus-cmb');
-    customerSelect.empty();
-
-    let id = "0001";
-    let name = "kavindu";
-
-    for (let cus of customer) {
-        $('#invoice-input-cus-cmb').append(`<option>${cus._id}</option>`);
+function loadAllCustomerId() {
+    $('#invoice-input-cus-cmb').empty();
+    for (let customerArElement of customer) {
+        $('#invoice-input-cus-cmb').append(`<option>${customerArElement.id}</option>`);
     }
 }
 

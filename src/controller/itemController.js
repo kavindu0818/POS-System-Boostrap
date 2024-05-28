@@ -23,8 +23,15 @@ $("#btn-add-item").on('click',function(){
     $("#item-table tbody").append(newRow);
 
     clearField();
+    loadAllItemId();
 });
 
+function loadAllItemId() {
+    $('#item-select-cmb').empty();
+    for (let customerArElement of item) {
+        $('#item-select-cmb').append(`<option>${customerArElement.code}</option>`);
+    }
+}
 $("#item-table").on('click', 'tr', function() {
     $("#item-tbl-value>tr").click(function (){
         let code =$(this).children(':eq(0)').text();
