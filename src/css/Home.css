@@ -11,8 +11,8 @@ h1{
 #div1{
     position: absolute;
     height: 100px;
-    width: 300px;
-    left: 250px;
+    width: 20vw;
+    left: 20vw;
     top: 100px;
     margin-top: 10px;
 }
@@ -24,8 +24,8 @@ h1{
 
 #div1In{
    background-color: white;
-    left: 130px;
-    width: 40px;
+    left: 8vw;
+    width: 3vw;
     height: 40px;
     position: absolute;
     align-content: center;
@@ -34,8 +34,8 @@ h1{
 #div2{
     position: absolute;
     height: 100px;
-    width: 300px;
-    left: 600px;
+    width: 20vw;
+    left: 44.5vw;
     top: 100px;
     margin-top: 10px;
 }
@@ -47,8 +47,8 @@ h1{
 
 #div2In{
     background-color: white;
-    left: 130px;
-    width: 40px;
+    left: 9vw;
+    width: 3vw;
     height: 40px;
     position: absolute;
     align-content: center;
@@ -57,8 +57,8 @@ h1{
 #div3{
     position: absolute;
     height: 100px;
-    width: 300px;
-    left: 950px;
+    width: 20vw;
+    left: 69vw;
     top: 100px;
     margin-top: 10px;
 }
@@ -70,8 +70,8 @@ h1{
 
 #div3In{
     background-color: white;
-    left: 130px;
-    width: 40px;
+    left: 8vw;
+    width: 3vw;
     height: 40px;
     position: absolute;
     align-content: center;
