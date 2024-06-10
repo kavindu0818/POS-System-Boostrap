@@ -76,3 +76,15 @@ h1{
     position: absolute;
     align-content: center;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+
+    .bg-light{
+        position: relative;
+        height: 5vh;
+        width: 70vw;
+        margin:5px;
+        border-radius: 10px
+    }
+
+}

@@ -25,7 +25,7 @@
 
 
     <section class="container-fluid">
-    <div style="height: 82vh; width: 15vw; margin:5px; border-radius: 10px"  class="bg-success">
+    <div style="height: 82vh; width: 15vw; margin:5px; border-radius: 10px"  class="bg-success" id="navDiv">
 
 
         <ul class="nav nav-pills flex-column mb-auto">
@@ -320,23 +320,25 @@
     <section>
         <div style="position: absolute; height: 250px; width: 20vw; left: 77vw; top: 100px; margin-top: 10px;" class="bg-light">
             <p class="fw-bold text-primary" style="left: 1.5vw; position: absolute; top: 40px">Total: </p>
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; left: 6vw; height: 25px; width: 110px">
+            <input type="text" class="form-control" id="total" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; left: 6vw; height: 25px; width: 110px">
 
             <p class="fw-bold text-danger" style="left: 1.5vw; position: absolute; top: 70px">SubTotal: </p>
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 70px; position: absolute; left: 8vw; height: 25px; width: 110px">
+            <input type="text" class="form-control" id="subTotal" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 70px; position: absolute; left: 8vw; height: 25px; width: 110px">
 
             <label style="position: absolute; left: 1.5vw; top: 110px;" class="fw-bold">cash</label>
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 134px; position: absolute; left: 20px; height: 20px; width: 90px">
+            <input type="text" class="form-control" id="cash" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 134px; position: absolute; left: 20px; height: 20px; width: 90px">
 
             <label style="position: absolute; left: 9.5vw; top: 110px;" class="fw-bold">Discount</label>
-            <select class="form-select" multiple aria-label="Multiple select example" style="position: absolute; left: 130px; top: 135px; width: 90px; height: 20px;">
-                <option selected></option>
-            </select>
+            <input type="text" class="form-control" id="discount" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 135px; position: absolute; left: 130px; height: 20px; width: 90px">
+
+            <!--            <select class="form-select" multiple aria-label="Multiple select example" style="position: absolute; left: 130px; top: 135px; width: 90px; height: 20px;">-->
+<!--                <option selected></option>-->
+<!--            </select>-->
 
             <label style="position: absolute; left: 1.5vw; top: 160px;" class="fw-bold">Balance</label>
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 180px; position: absolute; left: 20px; height: 20px; width: 150px">
+            <input type="text" class="form-control" id="balance" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 180px; position: absolute; left: 20px; height: 20px; width: 150px">
 
-            <button type="button" class="btn btn-success" style="position: absolute; bottom: 5px; left: 80px">Purchase</button>
+            <button type="button" id="purchase" class="btn btn-success" style="position: absolute; bottom: 5px; left: 80px">Purchase</button>
 
         </div>
     </section>
@@ -356,10 +358,10 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>I001</td>
-                    <td>Toffee</td>
-                    <td>10</td>
-                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
