@@ -8,6 +8,7 @@ import orderDetailsModel from "../model/orderDetailsModel.js";
 
 let selectedCustomerId;
 let itemCode;
+let lastQtyFix;
 
 $('#invoice-code').val(OrderIdGenerate());
 
@@ -46,7 +47,7 @@ $('#item-select-cmb').on('change', function(){
         if (itm.code==itemCode){
             $('#itemName').val(itm.itemName);
             $('#item-select-price').val(itm.price);
-            $('#item-select-qty').val(itm.qty);
+            $('#item-select-qty').val(itm._qty);
             $('#invoice-input-cus-cmb').focus();
         }
     }
@@ -62,6 +63,13 @@ $(document).ready(function(){
 
         $('#total').val(result);
         $('#subTotal').val(result);
+
+        for (let itm of item) {
+            if (itm.code == itemCode) {
+                itm.qty = lastQtyFix;
+                break;
+            }
+        }
     });
 });
 
@@ -90,32 +98,54 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    $('#item-select-orderQty, #item-select-qty').on('input', function () {
-        itemCode = $('#item-select-cmb:selected').text();
-        for (let itm of item) {
-            if (itm.code==itemCode){
+$('#item-select-orderQty').on('input', function () {
 
-                var orderQty = parseFloat($('#item-select-orderQty').val()) || 0;
-                var qtyL = parseFloat($('#item-select-qty').val()) || 0;
+    // Debug: Check event trigger
+    console.log("Input event triggered");
 
-                var lastQty = qtyL - orderQty;
+    // Get the selected item code
+    let itemCode = $('#item-select-cmb option:selected').text();
 
-                itm.qty = lastQty;
+    // Debug: Check selected item code
+    console.log("Selected item code:", itemCode);
 
-                $('#item-select-qty').val(itm.qty);
+    // Loop through the items to find the matching item by code
+    for (let itm of item) {
+        // Debug: Check each item
+        console.log("Checking item:", itm.code);
 
-            }
+        if (itm.code == itemCode) {
+            // Get the order quantity and current quantity values
+            let qtyL = itm._qty;
+            let orderQty = parseFloat($('#item-select-orderQty').val()) || 0;
+            // let qtyL = parseFloat($('#item-select-qty').val()) || 0;
+
+            // Debug: Check input values
+            console.log("Order Qty:", orderQty, "Qty L:", qtyL);
+
+            // Calculate the last quantity
+            let lastQty = qtyL - orderQty;
+
+            lastQtyFix = lastQty;
+
+            // Debug: Check updated item qty
+            console.log("Updated item qty:", itm.qty);
+
+            // Update the input field with the new qty
+            setItemQty(lastQty);
+
+            // Debug: Check if input field is updated
+            console.log("Updated input field qty:", $('#item-select-qty').val());
+
+            // break;
         }
-
-        var subTotal = parseFloat($('#subTotal').val()) || 0;
-        var cash = parseFloat($('#cash').val()) || 0;
-
-        var result =  cash - subTotal;
-
-        $('#balance').val(result.toFixed(2));
-    });
+    }
 });
+
+function setItemQty(lastQty){
+    $('#item-select-qty').val(lastQty);
+}
+
 
 $("#purchase").on('click',function(){
 
@@ -143,7 +173,7 @@ $("#purchase").on('click',function(){
             <td>${total}</td>
         </tr>`;
 
-    $(".table tbody").append(newRow);
+    $("#orderTable tbody").append(newRow);
 
     $('#invoice-code').val(OrderIdGenerate());
 

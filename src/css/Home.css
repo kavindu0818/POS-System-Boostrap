@@ -88,3 +88,93 @@ h1{
     }
 
 }
+
+/*===================Calender=======================*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    margin: 0;*/
+/*    background-color: #f0f0f0;*/
+/*}*/
+
+.calendar {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #198754;
+    color: #fff;
+}
+
+.calendar-header button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.day-names {
+    display: flex;
+}
+
+.day-names div {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days div {
+    width: 14.28%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.days div:hover {
+    background-color: #f0f0f0;
+}
+
+.days .today {
+    background-color: #198754;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.progress {
+    height: 40px;
+    font-size: 1em;
+}

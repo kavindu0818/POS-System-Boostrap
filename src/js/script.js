@@ -13,6 +13,13 @@ $("#customer-btn").on('click', () => {
     $("#orders").hide();
 });
 
+$("#home-btn").on('click', () => {
+    $("#customer").hide();
+    $("#home").show();
+    $("#item").hide();
+    $("#orders").hide();
+});
+
 $("#item-btn").on('click', () => {
     $("#item").show();
     $("#home").hide();
@@ -25,5 +32,69 @@ $("#Order-btn").on('click', () => {
     $("#home").hide();
     $("#customer").hide();
     $("#item").hide();
+});
+
+
+// ===============Calender==============================
+document.addEventListener('DOMContentLoaded', () => {
+    const daysContainer = document.getElementById('days');
+    const monthYearDisplay = document.getElementById('month-year');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentDate = new Date();
+
+    function renderCalendar(date) {
+        daysContainer.innerHTML = '';
+        const month = date.getMonth();
+        const year = date.getFullYear();
+
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+        const lastDayOfPrevMonth = new Date(year, month, 0).getDate();
+
+        monthYearDisplay.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+        for (let i = firstDayOfMonth; i > 0; i--) {
+            const day = document.createElement('div');
+            day.classList.add('prev-date');
+            day.textContent = lastDayOfPrevMonth - i + 1;
+            daysContainer.appendChild(day);
+        }
+
+        for (let i = 1; i <= lastDateOfMonth; i++) {
+            const day = document.createElement('div');
+            if (i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+                day.classList.add('today');
+            }
+            day.textContent = i;
+            daysContainer.appendChild(day);
+        }
+
+        const nextDays = 42 - daysContainer.children.length;
+
+        for (let i = 1; i <= nextDays; i++) {
+            const day = document.createElement('div');
+            day.classList.add('next-date');
+            day.textContent = i;
+            daysContainer.appendChild(day);
+        }
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar(currentDate);
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar(currentDate);
+    });
+
+    renderCalendar(currentDate);
+});
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
