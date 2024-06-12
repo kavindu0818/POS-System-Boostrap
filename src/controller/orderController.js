@@ -8,6 +8,26 @@ import orderDetailsModel from "../model/orderDetailsModel.js";
 
 let selectedCustomerId;
 let itemCode;
+
+$('#invoice-code').val(OrderIdGenerate());
+
+function OrderIdGenerate() {
+    let lastId = 'OD00-001';
+
+    if (orderDetails.length > 0) {
+        let lastElement = orderDetails[orderDetails.length - 1];
+
+        if (lastElement && lastElement._orderId) {
+            let lastIdParts = lastElement._orderId.split('-');
+            let lastNumber = parseInt(lastIdParts[1]);
+
+            lastId = `OD00-${String(lastNumber + 1).padStart(3, '0')}`;
+        }
+    }
+
+    return lastId;
+}
+
 $('#invoice-input-cus-cmb').on('change', function(){
     selectedCustomerId = $('#invoice-input-cus-cmb option:selected').text();
     for (let customerArElement of customer) {
@@ -47,29 +67,52 @@ $(document).ready(function(){
 
 $(document).ready(function () {
     $('#discount, #subTotal').on('input', function () {
-        // Get the values
+
         var discount = parseFloat($('#discount').val()) || 0;
         var subTotal = parseFloat($('#subTotal').val()) || 0;
         var total = parseFloat($('#total').val()) || 0;
 
-        // Calculate the total after discount
         var result =  total - (total * discount / 100);
 
-        // Update the total field
         $('#subTotal').val(result.toFixed(2));
     });
 });
 
 $(document).ready(function () {
     $('#cash, #balance').on('input', function () {
-        // Get the values
+
         var subTotal = parseFloat($('#subTotal').val()) || 0;
         var cash = parseFloat($('#cash').val()) || 0;
 
-        // Calculate the total after discount
         var result =  cash - subTotal;
 
-        // Update the total field
+        $('#balance').val(result.toFixed(2));
+    });
+});
+
+$(document).ready(function () {
+    $('#item-select-orderQty, #item-select-qty').on('input', function () {
+        itemCode = $('#item-select-cmb:selected').text();
+        for (let itm of item) {
+            if (itm.code==itemCode){
+
+                var orderQty = parseFloat($('#item-select-orderQty').val()) || 0;
+                var qtyL = parseFloat($('#item-select-qty').val()) || 0;
+
+                var lastQty = qtyL - orderQty;
+
+                itm.qty = lastQty;
+
+                $('#item-select-qty').val(itm.qty);
+
+            }
+        }
+
+        var subTotal = parseFloat($('#subTotal').val()) || 0;
+        var cash = parseFloat($('#cash').val()) || 0;
+
+        var result =  cash - subTotal;
+
         $('#balance').val(result.toFixed(2));
     });
 });
@@ -102,12 +145,15 @@ $("#purchase").on('click',function(){
 
     $(".table tbody").append(newRow);
 
+    $('#invoice-code').val(OrderIdGenerate());
+
     clearFields();
+
+
     // loadAllCustomerId();
 });
 
 function clearFields() {
-    $("#invoice-code").val('');
     $("#invoice-date").val('');
     $("#invoice-input-cus-cmb").val('');
     $("#item-select-cmb").val('');

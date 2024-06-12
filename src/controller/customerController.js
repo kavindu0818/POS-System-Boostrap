@@ -4,6 +4,7 @@ var recordIndex;
 
 
 loadAllCustomerId();
+$("#add-inp-cusId").val(cusIdGenerate());
 
     $("#add-btn-cus").on('click',function(){
         console.log("hiiiiiiiiiii")
@@ -27,6 +28,7 @@ loadAllCustomerId();
 
         clearField();
         loadAllCustomerId();
+        $("#add-inp-cusId").val(cusIdGenerate());
     });
 
 function loadAllCustomerId() {
@@ -34,6 +36,23 @@ function loadAllCustomerId() {
     for (let customerArElement of customer) {
         $('#invoice-input-cus-cmb').append(`<option>${customerArElement.id}</option>`);
     }
+}
+
+function cusIdGenerate() {
+    let lastId = 'C00-001';
+
+    if (customer.length > 0) {
+        let lastElement = customer[customer.length - 1];
+
+        if (lastElement && lastElement.id) {
+            let lastIdParts = lastElement.id.split('-');
+            let lastNumber = parseInt(lastIdParts[1]);
+
+            lastId = `C00-${String(lastNumber + 1).padStart(3, '0')}`;
+        }
+    }
+
+    return lastId;
 }
 
 $("#cus-table").on('click', 'tr', function() {

@@ -2,6 +2,24 @@ import ItemModel from "../model/ItemModel.js";
 import {customer, item} from "../db/db.js";
 var recordIndex;
 
+
+$('#add-item-code').val(ItemIdGenerate());
+function ItemIdGenerate() {
+    let lastId = 'I00-001';
+
+    if (item.length > 0) {
+        let lastElement = item[item.length - 1];
+
+        if (lastElement && lastElement.code) {
+            let lastIdParts = lastElement.code.split('-');
+            let lastNumber = parseInt(lastIdParts[1]);
+
+            lastId = `I00-${String(lastNumber + 1).padStart(3, '0')}`;
+        }
+    }
+
+    return lastId;
+}
 $("#btn-add-item").on('click',function(){
     console.log("hiiiiiiiiiii")
     var itemCode = $("#add-item-code").val();
@@ -24,6 +42,7 @@ $("#btn-add-item").on('click',function(){
 
     clearField();
     loadAllItemId();
+    $('#add-item-code').val(ItemIdGenerate());
 });
 
 function loadAllItemId() {
@@ -195,7 +214,6 @@ function clearFieldSearch(){
 }
 
 function clearField() {
-    $("#add-item-code").val('');
     $("#add-item-name").val('');
     $("#add-item-qty").val('');
     $("#add-item-price").val('');
