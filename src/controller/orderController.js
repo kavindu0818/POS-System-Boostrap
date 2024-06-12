@@ -179,9 +179,14 @@ $("#purchase").on('click',function(){
 
     clearFields();
 
-
+    displayOrderCounts();
     // loadAllCustomerId();
 });
+
+function displayOrderCounts() {
+    const customerCountDisplay = $('#order-count');
+    customerCountDisplay.text(` ${orderDetails.length}`);
+}
 
 function clearFields() {
     $("#invoice-date").val('');

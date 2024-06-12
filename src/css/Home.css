@@ -15,6 +15,7 @@ h1{
     left: 20vw;
     top: 100px;
     margin-top: 10px;
+
 }
 
 #h1c{
@@ -22,6 +23,10 @@ h1{
     text-align: center;
 }
 
+h3{
+    color: white;
+    text-align: center;
+}
 #div1In{
    background-color: white;
     left: 8vw;
@@ -58,8 +63,8 @@ h1{
     position: absolute;
     height: 100px;
     width: 20vw;
-    left: 69vw;
-    top: 100px;
+    left: 20vw;
+    top: 250px;
     margin-top: 10px;
 }
 
@@ -177,4 +182,10 @@ h1{
 .progress {
     height: 40px;
     font-size: 1em;
+}
+
+
+
+#time-display {
+    margin-top: 20px;
 }

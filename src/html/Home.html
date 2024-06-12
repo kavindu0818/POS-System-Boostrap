@@ -19,6 +19,8 @@
     <section class="container-fluid">
         <div style="height: 100px;" class="bg-light" >
             <h1 class="text-success">POS SYSTEM</h1>
+<!--            <h2 class="text-success"  id="time-display"></h2>-->
+<!--            <div id="time-display" class="display-4"></div>-->
 
         </div>
     </section>
@@ -74,7 +76,7 @@
                 <div id="month-year"></div>
                 <button id="next">&gt;</button>
             </div>
-            <div class="calendar-body" style="position: absolute; height: 50px">
+            <div class="calendar-body" style="position: absolute; height: 80px">
                 <div class="day-names">
                     <div>Sun</div>
                     <div>Mon</div>
@@ -89,7 +91,7 @@
         </div>
 
 
-        <div class="container mt-5" style="position: absolute; left: 20vw; top: 300px; width: 50vw" >
+        <div class="container mt-5" style="position: absolute; left: 18vw; top: 400px; width: 55vw" >
             <div class="row">
                 <div class="col text-center">
                     <h2>Week Orders Presentation Bar</h2>
@@ -106,37 +108,28 @@
                 </div>
             </div>
         </div>
-<!--    <section class="container-fluid">-->
-<!--        <div id="div1" class = "bg-success p-2 text-dark bg-opacity-50" style="background-color: black;">-->
-<!--            <h2 id="h1c" class="fw-bold">CUSTOMER</h2>-->
-<!--            <div id="div1In">-->
+    <section class="container-fluid">
+        <div id="div1" class = "bg-black" style="background-color: black;">
+            <h2 id="h1c" class="fw-bold">CUSTOMER</h2>
+            <h3 id="customer-count"></h3>
+        </div>
+    </section>
 
-<!--            </div>-->
+    <section class="container-fluid">
+        <div id="div2" class = "bg-black">
+            <h2 id="h2c" class="fw-bold">ITEMS</h2>
+            <h3 id="item-count"></h3>
 
+        </div>
+    </section>
 
-<!--        </div>-->
-<!--    </section>-->
+    <section class="container-fluid">
+        <div id="div3" class = "bg-black">
+            <h2 id="h3c" class="fw-bold">ORDERS</h2>
+            <h3 id="order-count"></h3>
 
-<!--    <section class="container-fluid">-->
-<!--        <div id="div2" class = "bg-success p-2 text-dark bg-opacity-50">-->
-<!--            <h2 id="h2c" class="fw-bold">ITEMS</h2>-->
-<!--            <div id="div2In">-->
-
-<!--            </div>-->
-
-
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section class="container-fluid">-->
-<!--        <div id="div3" class = "bg-success p-2 text-dark bg-opacity-50">-->
-<!--            <h2 id="h3c" class="fw-bold">ORDERS</h2>-->
-<!--            <div id="div3In">-->
-
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </section>-->
+        </div>
+    </section>
 </section>
 <!--</section>-->
 
@@ -213,7 +206,7 @@
 
 <!--            cus-table-->
 
-            <table class="table table-dark table-striped-columns" id="cus-table" style="height: 200px">
+            <table class="table table-dark table-striped" id="cus-table" style="height: 200px">
                 <thead>
 
                 <th>ID</th>
@@ -327,8 +320,8 @@
         <section>
             <div style="width: 80vw; height: 38vh; bottom: 10px; position: absolute; left: 18vw" class="bg-light" >
 
-                <table class="table table-dark table-striped-columns" id="item-table">
-                    <thead class="table-dark">
+                <table class="table table-dark table-striped" id="item-table" style=" height: 200px;">
+                    <thead>
 
                     <th>Code</th>
                     <th>Name</th>
@@ -338,10 +331,10 @@
                     </thead>
                     <tbody id="item-tbl-value">
                     <tr>
-<!--                        <td>I001</td>-->
-<!--                        <td>Toffee</td>-->
-<!--                        <td>10</td>-->
-<!--                        <td>30</td>-->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
@@ -446,8 +439,8 @@
     <section>
         <div style="width: 80vw; height: 230px; bottom: 10px; position: absolute; left: 18vw" class="bg-light" >
 
-            <table class="table table-dark table-striped-columns" id="orderTable" style="height: 230px">
-                <thead class="table-dark">
+            <table  class="table table-dark table-sm" id="orderTable" style="height: 230px">
+                <thead >
 
                 <th>Item Code</th>
                 <th>Item Name</th>
@@ -458,6 +451,7 @@
                 </thead>
                 <tbody>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

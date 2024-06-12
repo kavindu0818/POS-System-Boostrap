@@ -1,6 +1,36 @@
 import CustomerModel from "../model/customerModel.js";
-import {customer} from "../db/db.js";
+import {customer, item, orderDetails} from "../db/db.js";
 var recordIndex;
+
+$(document).ready(function() {
+    // Function to display the customer counts in the h3 tag
+    function displayCustomerCounts() {
+        const customerCountDisplay = $('#customer-count');
+        customerCountDisplay.text(` ${customer.length}`);
+    }
+
+    // Call the function to display the counts when the document is ready
+    displayCustomerCounts();
+});
+
+$(document).ready(function() {
+
+    function displayOrderCounts() {
+        const customerCountDisplay = $('#order-count');
+        customerCountDisplay.text(` ${orderDetails.length}`);
+    }
+    displayOrderCounts();
+});
+
+$(document).ready(function() {
+
+    function displayItemCounts() {
+        const customerCountDisplay = $('#item-count');
+        customerCountDisplay.text(` ${item.length}`);
+    }
+    displayItemCounts();
+});
+
 
 $("#customer").hide();
 $("#item").hide();
@@ -97,4 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+function updateTime() {
+    const timeDisplay = document.getElementById('time-display');
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateTime, 1000);
+updateTime();  // Initial call to display time immediately
+
 

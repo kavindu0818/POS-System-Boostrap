@@ -43,7 +43,13 @@ $("#btn-add-item").on('click',function(){
     clearField();
     loadAllItemId();
     $('#add-item-code').val(ItemIdGenerate());
+    displayItemCounts();
 });
+
+function displayItemCounts() {
+    const customerCountDisplay = $('#item-count');
+    customerCountDisplay.text(` ${item.length}`);
+}
 
 function loadAllItemId() {
     $('#item-select-cmb').empty();

@@ -29,7 +29,12 @@ $("#add-inp-cusId").val(cusIdGenerate());
         clearField();
         loadAllCustomerId();
         $("#add-inp-cusId").val(cusIdGenerate());
+        displayCustomerCounts()
     });
+    function displayCustomerCounts() {
+        const customerCountDisplay = $('#customer-count');
+        customerCountDisplay.text(` ${customer.length}`);
+    }
 
 function loadAllCustomerId() {
     $('#invoice-input-cus-cmb').empty();
