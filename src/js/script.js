@@ -2,6 +2,14 @@ import CustomerModel from "../model/customerModel.js";
 import {customer, item, orderDetails} from "../db/db.js";
 var recordIndex;
 
+
+function openmenu() {
+    const navDiv = document.getElementById('navDiv');
+    if (navDiv) {
+        navDiv.style.display = "block";
+        // navDiv.style.height = "";
+    }
+}
 $(document).ready(function() {
     // Function to display the customer counts in the h3 tag
     function displayCustomerCounts() {

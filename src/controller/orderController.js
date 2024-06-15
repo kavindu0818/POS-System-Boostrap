@@ -198,7 +198,32 @@ function clearFields() {
     $("#total").val('');
     $("#cash").val('');
     $("#discount").val('');
+
 }
+
+("#item-select-orderQty").on('keyup', () => {
+    var orderFormQtyOnHand=parseInt($('#item-select-qty').val());
+    var orderQty =parseInt($('#item-select-orderQty').val());
+    var itemQtyPattern = /^\d+$/;
+    var errorMessageQty = $('.errorOrderQty');
+    var errorQty = $('.errorQty');
+
+
+    if (!itemQtyPattern.test(orderQty)) {
+        errorQty.show();
+        $('#item-select-orderQty').css('border', '2px solid red');
+    } else {
+        errorQty.hide();
+        $('#item-select-orderQty').css('border', '2px solid green');
+    }
+
+    if (orderQty>orderFormQtyOnHand){
+        $('#orderQtyValue').text(orderFormQtyOnHand);
+        errorMessageQty.show();
+    }else {
+        errorMessageQty.hide();
+    }
+});
 
 
 

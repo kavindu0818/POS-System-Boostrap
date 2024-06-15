@@ -17,8 +17,9 @@
 <body>
 
     <section class="container-fluid">
-        <div style="height: 100px;" class="bg-light" >
+        <div style="height: 100px; width: 100%" class="bg-light" >
             <h1 class="text-success">POS SYSTEM</h1>
+            <h3 id="menu" onclick="openmenu()">MENU</h3>
 <!--            <h2 class="text-success"  id="time-display"></h2>-->
 <!--            <div id="time-display" class="display-4"></div>-->
 
@@ -27,7 +28,7 @@
 
 
     <section class="container-fluid">
-    <div style="height: 82vh; width: 15vw; margin:5px; border-radius: 10px"  class="bg-success" id="navDiv">
+    <div style=""  class="bg-success" id="navDiv">
 
 
         <ul class="nav nav-pills flex-column mb-auto">
@@ -134,9 +135,9 @@
 <!--</section>-->
 
 
-<section id="customer" class="section" style="display: none">
+<section id="customer" class="section" style="display: none" >
     <section class="container-fluid">
-        <div style="position: absolute; height: 250px; width: 47vw; left: 18vw; top: 100px; margin-top: 10px;" class="bg-light">
+        <div  class="bg-light" id="serchCus">
 
             <label style="left: 1.5vw; position: absolute" class="fw-bold text-black">Search Customer</label>
             <input type="text" class="form-control" id="serch-inp-cus" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
@@ -176,7 +177,7 @@
     </section>
 
     <section class="container-fluid">
-        <div style="width: 32vw; height: 250px; position: absolute; right: 0.5vw; top: 100px; margin: 10px" class="bg-light" >
+        <div  class="bg-light" id="addCus" >
             <p CLASS="fw-bold" style="position: absolute; right: 0px">+ ADD CUSTOMER</p>
 
             <label style="left: 1vw; position: absolute; top: 20px; z-index: 100; width: 200px;" class="fw-bold text-black">ID</label>
@@ -202,7 +203,7 @@
     </section>
 
     <section>
-        <div style="width: 80vw; height: 38vh; bottom: 10px; position: absolute; left: 18vw" class="bg-light" >
+        <div style="width: 80vw; height: 38vh; bottom: 10px; position: absolute; left: 18vw" class="bg-light"  id="cusTable">
 
 <!--            cus-table-->
 
@@ -402,6 +403,9 @@
             <label style="left: 14.5vw; position: absolute; top: 95px; z-index: 100; width: 200px;" class="fw-bold text-black">QtyOfHand</label>
             <input type="text" id="item-select-qty" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 115px; position: absolute; width: 10vw; left: 14.5vw; height: 25px;">
 
+<!--            <div class="col-md-4 fw-bold">-->
+<!--                <span class="errorOrderQty">Please enter a amount lower than: <span id="orderQtyValue"></span></span>-->
+<!--                </div>-->
             <label style="left: 1.5vw; position: absolute; top: 140px; z-index: 100; width: 200px;" class="fw-bold text-black">Order Quantity</label>
             <input type="text" id="item-select-orderQty" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; left: 1.5vw; height: 25px; width: 10vw">
 
@@ -422,7 +426,7 @@
             <input type="text" class="form-control" id="cash" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 134px; position: absolute; left: 20px; height: 20px; width: 90px">
 
             <label style="position: absolute; left: 9.5vw; top: 110px;" class="fw-bold">Discount</label>
-            <input type="text" class="form-control" id="discount" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 135px; position: absolute; left: 130px; height: 20px; width: 90px">
+            <input type="text" class="form-control" id="discount" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 135px; position: absolute; left: 9vw; height: 20px; width: 10vw">
 
             <!--            <select class="form-select" multiple aria-label="Multiple select example" style="position: absolute; left: 130px; top: 135px; width: 90px; height: 20px;">-->
 <!--                <option selected></option>-->
@@ -474,5 +478,17 @@
 <!--    <script src="../js/db.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<script>
+    function openmenu() {
+    const navDiv = document.getElementById('navDiv');
+    if (navDiv) {
+        if (navDiv.style.display === "block") {
+            navDiv.style.display = "none";
+        } else {
+            navDiv.style.display = "block";
+        }
+    }
+    }
+</script>
 </body>
 </html>

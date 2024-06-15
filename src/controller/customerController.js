@@ -228,3 +228,62 @@ function clearField(){
     $("#add-inp-cusAddress").val('');
     $("#add-inp-cusSalary").val('');
 }
+
+$('#add-inp-cusId').on('keyup', function () {
+    var cusid = $(this).val();
+    var cusidPattern = /^C\d{3}$/;
+    var errorMessage = $('.errorMessageId');
+
+    if (!cusidPattern.test(cusid)) {
+        errorMessage.show();
+        $(this).css({ 'border': '2px solid red' });
+    } else {
+        errorMessage.hide();
+        $(this).css({ 'border': '2px solid green' });
+    }
+});
+
+// Validate Customer Name
+$('#add-inp-cusName').on('keyup', function () {
+    var cusName = $(this).val();
+    var cuanamePattern = /^\s*\S.{3,18}\S\s*$/
+    var errorMessage = $('.errorMessageName');
+
+    if (!cuanamePattern.test(cusName)) {
+        errorMessage.show();
+        $(this).css({'border': '2px solid red'});
+    } else {
+        errorMessage.hide();
+        $(this).css({'border': '2px solid green'});
+    }
+});
+
+// Validate Customer Address
+$('#add-inp-cusAddress').on('keyup', function () {
+    var cusAddress = $(this).val();
+    var cusAddressPattern = /^.{7,}$/;
+    var errorMessage = $('.errorMessageAddress');
+
+    if (!cusAddressPattern.test(cusAddress)) {
+        errorMessage.show();
+        $(this).css({ 'border': '2px solid red' });
+    } else {
+        errorMessage.hide();
+        $(this).css({ 'border': '2px solid green' });
+    }
+});
+
+
+$('#add-inp-cusSalary').on('keyup', function () {
+    var cusSalary = $(this).val();
+    var salaryPattern = /^\d+(\.\d{1,2})?$/;
+    var errorMessage = $('.errorMessageSalary');
+
+    if (!salaryPattern.test(cusSalary)) {
+        errorMessage.show();
+        $(this).css({ 'border': '2px solid red' });
+    } else {
+        errorMessage.hide();
+        $(this).css({ 'border': '2px solid green' });
+    }
+});

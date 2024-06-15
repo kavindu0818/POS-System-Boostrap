@@ -15,6 +15,8 @@ h1{
     left: 20vw;
     top: 100px;
     margin-top: 10px;
+    color: white;
+    border-radius: 20px;
 
 }
 
@@ -42,6 +44,8 @@ h3{
     width: 20vw;
     left: 44.5vw;
     top: 100px;
+    border-radius: 20px;
+    color: white;
     margin-top: 10px;
 }
 
@@ -63,8 +67,10 @@ h3{
     position: absolute;
     height: 100px;
     width: 20vw;
-    left: 20vw;
+    left: 32vw;
     top: 250px;
+    color: white;
+    border-radius: 20px;
     margin-top: 10px;
 }
 
@@ -82,14 +88,50 @@ h3{
     align-content: center;
 }
 
+#navDiv{
+    height: 82vh;
+    width: 15vw;
+    margin:5px;
+    border-radius: 10px;
+    display: block;
+}
+
+#menu{
+    display: none;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 750px) {
 
     .bg-light{
         position: relative;
-        height: 5vh;
+        height: 20vh;
         width: 70vw;
         margin:5px;
-        border-radius: 10px
+        top: 10px;
+        border-radius: 10px;
+        background-color: black;
+
+    }
+
+    #navDiv{
+        position: fixed;
+        width: 100vw;
+        height: 50vh;
+        background-color: black;
+        top: 100px;
+        display: none;
+        z-index: 2000;
+
+    }
+
+
+
+    #menu{
+        position: absolute;
+        color: black;
+        font-size: 20px;
+        right: 5vw;
+        top: 30px;
     }
 
 }
